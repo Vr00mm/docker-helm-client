@@ -72,7 +72,7 @@ jobs:
           push: true
           file: ./Dockerfile
           context: .
-          tags: ${{ secrets.CI_REGISTRY }}/${{ needs.infos.outputs.APP_NAME }}:${{ needs.infos.outputs.NEXT_VERSION }}
+          tags: docker.io/${{ needs.infos.outputs.APP_NAME }}:${{ needs.infos.outputs.NEXT_VERSION }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
